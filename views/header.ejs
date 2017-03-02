@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title> Lovers 秘密 </title>
+  <link rel="stylesheet" href="/plugin/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="icon" href="/../images/smallLogo.png">
+  <script src="/javascripts/jquery.js"></script>
+  <script src="/javascripts/base.js"></script>
+  <script src="/plugin/bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+<!--<header class="clearfix">-->
+  <nav class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                data-target="#example-navbar-collapse">
+          <span class="sr-only">切换导航</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      
+      </div>
+      <div class="collapse navbar-collapse" id="example-navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="/"><span class="glyphicon glyphicon-home"></span> Lovers 首页 </a></li>
+          <li><a href="/post"><span class="glyphicon glyphicon-pencil"></span> 写日志 </a></li>
+          <li><a href="/archive" style="margin-top: 3px;"> 最新 </a></li>
+          <li><a href="#" style="margin-top: 3px;">  </a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if (user) { %>
+          <li><a href="/user"><img style="width: 40px;height:40px;border-radius: 50%;margin-right: 5px;" src=/images/<%= user.picUrl %> alt="userpic"><%= user.name %></a></li>
+          <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> 退出 </a></li>
+          <% } else { %>
+          <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> 登录 </a></li>
+          <li><a href="/reg"><span class="glyphicon glyphicon-user"></span> 注册 </a></li>
+          <% } %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+<!--</header>-->
+    <script>
+      $(function () {
+        var success = '<%= success %>';
+        var error = '<%= error %>';
+        if (success) {
+          $.popup(success);
+          setTimeout(function () {
+            $('.popup').fadeOut();
+          },1000)
+        }else if(error){
+          $.popup(error);
+          setTimeout(function () {
+            $('.popup').fadeOut();
+          },1000)
+        }
+      })
+    </script>

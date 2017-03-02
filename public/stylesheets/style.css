@@ -1,0 +1,86 @@
+*{margin:0;padding:0;box-sizing: border-box;list-style: none;}
+p{line-height: 25px;}
+body {padding: 0px; font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;background: #c1b9b7;color: #807878;}
+a,a:hover {color: #c57f6b;text-decoration: none;}
+pre{border: none;line-height: 25px;font-size: 14px;color: #8a6d3b;background: #3c3c3c;}
+.btn-success:hover {
+    
+}
+.popup {position: fixed;z-index: 222;padding: 20px;width: 340px;height: 200px;left: calc(50% - 170px);top: calc(50% - 100px);background-color: #908589;border-radius: 5px;}
+.popup .pop-close {position: absolute;right: 0px;top: 0px;height: 30px;width: 340px;line-height: 30px;font-size: 20px;text-align: right;color: #fff;cursor: pointer;background-color: #93888c;opacity: 0.8;border-top-right-radius: 5px;border-top-left-radius: 5px;}
+.popup .pop-close span {margin-right: 20px;}
+.popup .pop-content {padding-top: 50px;text-align: center;font-size: 25px;line-height: 50px;color: #3c3c3c;}
+.mask {position: fixed;width: 100px;height: 100px;top: 0px;right: 0;left: 0;bottom: 0;z-index: 99998;opacity: 0.5;}
+.navbar-inverse {margin:0;border:none;border-radius: 0;background: linear-gradient(#d5c1c0,#c1b9b7);}
+.navbar-inverse img {width: 90px;height:45px;margin-top: -10px;}
+.navbar-inverse .navbar-nav > li > a {color:#f5ebeb}
+.nav a {font-size: 20px;font-weight: bold;font-family: 方正舒体;}
+.form-horizontal{color:#f9f6fb;padding-top: 50px;}
+.form-horizontal input{max-width: 320px;}
+#homeLogo {border-radius:20px;}
+.reg_form span{width:15px;height: 15px;color:orangered;visibility: hidden;font-weight:bold;float: right;margin: -25px 190px;}
+.col-sm-6>button {min-width: 320px;height: 45px;font-size: 25px;margin-top: 28px;background-color: #a1949e;border-color: #a1949e;}
+.col-sm-6>button:hover {color: #fff;background-color: #8e8485;border-color: #938d91;}
+.col-sm-6>button:active{color: #fff;background-color: #8e8485 !important;border-color: #938d91;}
+.btn {color: #fff;background-color: #8e8485;border-color: #938d91;}
+.btn:hover {color: #fff;background-color: #8e8485 !important;border-color: #938d91;}
+.btn:active {color: #fff;background-color: #8e8485 !important;border-color: #938d91;}
+.right-frame,.left-frame{border:1px solid #dec8c8;border-radius: 10px; margin-top:30px;padding-bottom:10px;}
+.searchBoard,.sub{margin:15px 0;padding:5px 0;}
+.release{width:800px;margin:50px auto;font-size:20px;font-family:方正舒体;position:relative;padding:20px;}
+.release input {width: 200px;height: 34px;border-radius: 4px; border: none;font-size: 18px;}
+.sub .btn-success{font-size: 22px;width: 120px;position: absolute;right: 45px; bottom:42px;}
+.post-ul li{padding:15px;background: #bdb3b3;margin: 15px 0;}
+.post-content{display: inline-block;width: 600px;}
+.tag{margin:0 4px;border-radius:3px;font-size:14px;display:inline-block;padding:3px 7px;margin-bottom:8px;}
+.tag:hover{background-color:#ffffff;color:orangered;-webkit-transition:color .2s linear;}
+.box,.post_div p{ zoom: 1;width: 90%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;-o-text-overflow: ellipsis;}
+.post_a:hover,.author:hover,.title a:hover,.person_div a:hover{color:lightsalmon;}
+.dis_a{display: block; font-size: 22px; text-align: center;}
+.menu_btn li a{color:#fff;border-bottom: 1px dotted #5e5e5e;padding:5px 0;margin-top:12px;}
+.item_ul,.item_ul ul{border:none; margin-top:20px;font-size: 16px;}
+.item_ul>li,.article_div{background: #cec3c0;padding-bottom: 20px;border:none;box-shadow: 2px 1px 5px 2px;}
+.item_ul li h4{margin:0;padding:10px;border-bottom:1px dashed #5e5e5e;}
+.item_ul li li{margin-bottom:10px;}
+.item_ul li a:hover{color:#eee;}
+.search input{height: 45px;margin-top:20px;background: #eadede; border:1px solid #d8c4be;font-size: 18px;}
+.search input:last-child{background: #d8c4be;color:white;}
+.marginTop {margin-top: 20px;}
+.article_edit {display: inline-block;background:#9d9d9d;color: white;font-size: 18px;margin:10px 10px 10px 0;padding:5px 8px; }
+.comment_ul{padding: 20px;}
+.comment_ul li:last-child{border-bottom: none;}
+.comment_ul li h3 {font-size: 25px;font-family: 华文行楷;font-weight: normal;}
+.comment_ul .comment_li{height: 90px;border-bottom:1px solid #3c3c3c;margin:10px 0;padding:10px;}
+.comment_text{background: #d0c9c9;border:1px solid snow;font-size: 18px;padding:10px 5px}
+.prepage a,.nextpage a,.pages{background:#cec3c0;padding:3px 10px;font-size: 18px;color:#b92c28;margin:0 3px;display: inline-block;text-align: center;line-height: 25px;border:1px solid #cec3c0;}
+.userdiv img{display: inline-block;width:45px;height: 45px;border-radius: 50%;margin-left: -5px;}
+.author{display: inline-block;text-align: center;margin-top:10px;}
+.userinfo{text-align: center; background: transparent;opacity: 0.9; padding-bottom: 50px;}
+.userinfo h2{border-bottom: 1px solid #e0d1cd;padding:10px 0; }
+.picUpload .uploadFile{display: none;}
+.userPhoto img{width:120px;height: 120px;border-radius:50%;}
+.picUpload input{border: none;display: inline-block;width:75px;line-height: 30px;margin:10px;padding:0 5px;background:brown;opacity: 0.8;color:white; }
+.scrollTop{position: fixed;bottom: 5%;right:120px;display: inline-block;width:90px;height: 186px;background: url("/../images/scrollTop.png");background-size: 100% 100%;}
+.person_div{text-align: center;padding-top: 20px;border-radius: 3px;box-shadow: -1px -1px 5px white;}
+.menu_btn{text-align: center;padding-bottom: 10px;padding-top: 20px;border-radius: 5px;border:1px solid #e6e2db;box-shadow: -1px -1px 5px #e6e2db;}
+.person_div img{width:60%; border-radius: 8px;}
+.person_div p a{display: inline-block;width:40%;height: 28px;line-height:28px;background: #3c3c3c;margin-top: 6px;font-size: 15px; }
+.person_div a:last-child{margin-left: 10px;}
+.person_form input{background: #e0e0e0;color:orangered;font-size: 16px; }
+.right-frame{border: none;padding:0;}
+footer{margin: 50px 0 0 0; background: #c1b9b7;padding-top:20px;border-top:5px solid #dad6d4;}
+footer>div>p:first-child{margin-bottom: 20px;padding:0 16px 10px;border-bottom: 1px solid #9d9d9d;  }
+footer ul li a{color: #bd8169;}
+footer div div p{display: block; float: left; line-height: 16px;}
+footer div div ul{overflow: hidden;}
+footer div div ul li{float: left;}
+footer div div ul li a{display: inline-block; padding: 0 10px; border-right: 1px solid #dad6d4;}
+footer div div ul li:last-of-type a{border-right:none;}
+footer p:last-child{padding-left:16px;clear: both;}
+.current{ background: #cec3c0;border-radius: 5px;}
+@media (max-width: 990px) and (min-width: 750px) {
+    .navbar-nav li a{
+        padding:10px 8px;
+    }
+}
+

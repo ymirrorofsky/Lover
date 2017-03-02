@@ -1,0 +1,22 @@
+<%- include header %>
+<div class="container marginTop form-group">
+    <ul class="post-ul col-sm-offset-1 col-sm-10">
+        <% posts.forEach(function (post, index) { %>
+        <li style="overflow: hidden">
+            <div class="col-xs-offset-1 col-xs-10">
+                <% var lastYear = 0 %>
+                <% if(lastYear != post.time.year) { %>
+                <h3><%= post.time.year %></h3>
+                <% lastYear = post.time.year } %>
+                <p>
+                   <span>作者：</span><a class="author" href="/u/<%= post.name %>"><%= post.name %></a> |
+                   <span>日期：</span><time><%= post.time.minute %></time></p>
+                <h3><a href="/u/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>"><%= post.title %></a></h3>
+            </div>
+        </li>
+        <% }) %>
+    </ul>
+    <div>
+        <a href="javaScript:;" class="scrollTop"></a>
+    </div>
+</div>

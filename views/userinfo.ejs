@@ -1,0 +1,65 @@
+<% include header %>
+<div class="container marginTop form-group">
+  <div class="col-xs-offset-1 col-xs-10 userinfo">
+    <div class="form-group">
+      <h2><%= title %></h2>
+      <form class="picUpload marginTop" enctype="multipart/form-data" action="/user" method="POST">
+        <ul>
+          <li class="userPhoto"><img src=<%= userpic %> alt="pic"></li>
+          <input class="uploadFile" name="userpic" type="file">
+          <li><input class="chooseBtn" type="button" value="选择头像"><input type="submit" value="上传"></li>
+        </ul>
+      </form>
+    </div>
+    <div class="form-group">
+      <form class="form-horizontal col-xs-offset-2 person_form" role="form" method="post" action="/user/<%= user.name %>">
+        <div class="form-group">
+          <label class="col-xs-3 control-label">昵称</label>
+          <div class="col-xs-6">
+            <input type="text" class="form-control" name="name" value="<%= user.name %>">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-xs-3 control-label">个签</label>
+          <div class="col-xs-6">
+            <input type="text" class="form-control" name="personal" maxlength="30" value="<%= user.personal %>" placeholder="最多可输入30个字">
+          </div>
+        </div>
+        <div class="form-group">
+        </div>
+        <div class="form-group">
+          <div class="col-xs-6 col-xs-offset-2">
+            <p style="color: orangered;text-align: left;margin-top: 20px;padding: 0;margin-bottom: 10px;margin-left: 100px;" class="col-xs-offset-4"> 慎重哦，确定要提交修改吗 </p>
+            <button type="submit" class="btn btn-danger" name="button" style="width: 60%;"> 提交修改 </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  var userPic = document.querySelector('.userPhoto img');
+  var inputFile = document.querySelector('.uploadFile');
+  var chooseBtn = document.querySelector('.chooseBtn');
+
+  chooseBtn.onclick = function () {
+    inputFile.click();
+  }
+  userPic.onclick = function () {
+    inputFile.click();
+  }
+  inputFile.onchange = function () {
+    console.dir(this);
+    console.dir(this.files);
+    var file = this.files[0];
+    if(file.type.startsWith('image')) {
+      //创建一个指向该文件的路径
+      var src = URL.createObjectURL(file);
+      console.log('666' + src);
+      userPic.src = src;
+    }else {
+      alert('请选择图片文件');
+    }
+  }
+</script>

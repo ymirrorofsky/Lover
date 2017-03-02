@@ -1,0 +1,34 @@
+<br />
+<div style="float: right" class="paging_div">
+  <% if (!isFirstPage) { %>
+  <span class="prepage">
+    <a title="首页" href="?p=1">首页</a>
+    <a title="上一页" href="?p=<%= page-1 %>">上一页</a>
+    </span>
+  <% } %>
+
+  <% if (Math.ceil(total/7) < 5) { %>
+  <% for (var i = 1;i <= Math.ceil(total/7); i++) { %>
+  <span><a class="pages" title="页数" href="?p=<%= i %>"><%= i %></a></span>
+  <% } %>
+  <% }else { %>
+  <% if(page < 3) { %>
+  <% for (var i = 1;i <= 4; i++) { %>
+  <span><a class="pages" title="页数" href="?p=<%= i %>"><%= i %></a></span>
+  <% } %>
+  <% }else { %>
+  <% for (var i = -2;i <= 2;i++) { %>
+  <% if(page + i <= Math.ceil(total/7)) { %>
+  <span><a class="pages" title="页数" href="?p=<%= page + i %>"><%= page + i %></a></span>
+  <% } %>
+  <% } %>
+  <% } %>
+  <% } %>
+
+  <% if (!isLastPage) { %>
+  <span class="nextpage">
+    <a title="下一页" href="?p=<%= page+1 %>">下一页</a>
+    <a title="尾页" href="?p=<%= Math.ceil(total/7) %>">尾页</a>
+    </span>
+  <% } %>
+</div>

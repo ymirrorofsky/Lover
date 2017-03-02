@@ -1,0 +1,33 @@
+<%- include header %>
+<div class="container marginTop form-group">
+    <div class="col-xs-offset-1 col-xs-10 article_div">
+        <div class="col-xs-1 userdiv marginTop">
+            <img src=<%= '/images/' + post.picUrl %> alt=""><br>
+        </div>
+        <div class="col-xs-10">
+            <h4 style="line-height: 50px;"><a class="author" href="/u/<%= post.name %>"><%= post.name %></a></h4>
+            <h2 style="te"><%= post.title %></h2>
+            <div>
+                <% if (user && user.name == post.name) { %>
+                <span><a class="article_edit" href="/edit/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>">编辑</a></span>
+                <span><a class="article_edit" href="/remove/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>">删除</a></span>
+                <% } %>
+            </div>
+
+            <p class="info">
+                <span>日期：</span><%= post.time.minute %> |
+                <span>标签：</span>
+                <% post.tags.forEach(function (tag, index) { %>
+                <% if (tag) { %>
+                <a href="/tags/<%= tag %>"><%= tag %></a>
+                <% } %>
+                <% }) %>
+            </p>
+            <p><%- post.post %></p>
+            <p><span> 阅读：</span><%= post.pv %> | <span>评论：</span><%= post.comments.length %></p>
+        </div>
+        <div class="col-xs-12 marginTop">
+            <%- include comment %>
+        </div>
+    </div>
+</div>

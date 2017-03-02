@@ -1,0 +1,13 @@
+<% include header %>
+<form method="post" class="release" action="/edit/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>">
+  <div class="container">
+    <p> 标题： </p>
+    <input type="text" name="title" maxlength="22" placeholder="最多可输入22个字符" value="<%= post.title %>"/><br/></br>
+    <textarea name="post" rows="15" cols="70" style="background: linear-gradient(#cccccc,#3c3c3c)"><%= post.post %></textarea><br /></br>
+    <div class="form-group sub">
+      <button type="button" class="btn btn-default"  style="font-size: 22px;width: 120px;"><a href="/" class="dis_a"> 取消 </a></button>
+      <button type="submit" class="btn btn-success dis_a"> 保存 </button>
+    </div>
+  </div>
+</form>
+

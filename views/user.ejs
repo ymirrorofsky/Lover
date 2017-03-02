@@ -1,0 +1,32 @@
+<%- include header %>
+<div class="container marginTop form-group">
+    <ul class="post-ul col-md-10 col-md-offset-1">
+        <% posts.forEach(function (post, index) { %>
+        <li style="overflow: hidden">
+            <div class="col-xs-1 userdiv">
+                <img src=<%= '/images/' + post.picUrl %> alt="头像">
+            </div>
+            <div class="col-xs-11">
+                <h4 style="line-height: 15px;"><a class="author" href="/u/<%= post.name %>"><%= post.name %></a></h4>
+                <p><h2 class="title">
+                    <a href="/u/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>"><%= post.title %></a>
+                </h2></p>
+                <div>
+                    <span>日期：</span><%= post.time.minute %> |
+                    <span>标签：</span>
+                    <% post.tags.forEach(function (tag, index) { %>
+                    <% if (tag) { %>
+                    <a style="margin-right: 10px;" href="/tags/<%= tag %>"><%= tag %></a>
+                    <% } %>
+                    <% }) %>
+                </div>
+                <div class="post_div"><p class="box"><%- post.post %></p></div>
+                <p><span>阅读：</span><%= post.pv %> | <span>评论：</span><%= post.comments.length %></p>
+            </div>
+        </li>
+        <% }) %>
+    </ul>
+    <div class="col-md-10 col-md-offset-1">
+        <% include paging %>
+    </div>
+</div>

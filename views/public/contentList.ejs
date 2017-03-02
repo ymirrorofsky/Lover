@@ -1,0 +1,40 @@
+<!--主要的内容-->
+<h1 class="text-center" style="font-family: 方正舒体;"> Darling 家园 </h1>
+<ul class="post-ul form-group ellipsis">
+  <% posts.forEach(function (post, index) { %>
+  <li class="col-md-12 form-group">
+    <div class="col-md-1 userdiv">
+        <img src=<%= '/images/' + post.picUrl %> alt="">
+    </div>
+    <div class="form-group col-md-11">
+      <h4><a class="post_a" href="/u/<%= post.name %>"><%= post.name %></a> 的日志：</h4>
+      <p class="info">
+        标签：
+        <% post.tags.forEach(function (tag, index) { %>
+        <% if (tag) { %>
+        <a class="tag"><%= tag %></a>
+        <% } %>
+        <% }) %>
+      </p>
+      <p><h3><a class="post_a" href="/u/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>"><%= post.title %></a></h3></p>
+      <div class="post_div"><p class="box col-md-12"><%- post.post %></p></div>
+      <p class="info"> 发表于：<%= post.time.minute %> |
+        阅读：<%= post.pv %> |
+        <span class="glyphicon glyphicon-comment"></span> 评论：<%= post.comments.length %>
+      </p>
+    </div>
+  </li>
+  <% }) %>
+</ul>
+<script>
+  $(function () {
+      $('.post-ul li').hover(function () {
+          $(this).css("box-shadow","0 0 10px white")
+      },function () {
+          $(this).css('box-shadow','0 0 0 0');
+      })
+  })
+</script>
+
+
+

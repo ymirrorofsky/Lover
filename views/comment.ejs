@@ -1,0 +1,52 @@
+<!--<div class="container form-group marginTop">-->
+  <div class="comment_div form-group">
+    <br>
+    <!--留言的展示-->
+    <ul class="marginTop comment_ul col-xs-12">
+      <li><h3> 留下你的观点吧，Darling： </h3></li>
+    <% post.comments.forEach(function(comment){ %>
+      <li class="comment_li form-group">
+        <div class="col-xs-1 userdiv">
+          <img src=<%= '/images/' + comment.commentpic %> alt="">
+        </div>
+        <div class="col-xs-10" style="margin-left: 10px;">
+          <p>
+            <%= comment.name %>
+            <span> 回复于 <%= comment.time %></span>
+          </p>
+          <p><%- comment.content %></p>
+        </div>
+      </li>
+    <% })%>
+    </ul>
+    <!--添加留言的表单-->
+    <% if (user) { %>
+    <form method="post" class="form-group" action="/comment/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>">
+      <span>发布人:<%= user.name %></span>
+      <input type="hidden" name="name" value="<%= user.name %>"/><br><br>
+      <textarea name="content" rows="8" class="col-xs-12 comment_text"></textarea><br>
+      <button type="submit" class="btn btn-success marginTop col-md-offset-11"> 评论 </button>
+    </form>
+    <% }else{ %>
+    <form method="post">
+      回应请先<a href="/login">登录</a>或<a href="/reg">注册</a>
+      <textarea  name="content" rows="8" id="tb" class="col-xs-12 comment_text marginTop"></textarea><br>
+      <button type="submit"  id="sb" class="btn btn-success marginTop col-md-offset-11"> 评论 </button>
+    </form>
+    <% } %>
+  </div>
+<!--</div>-->
+<script>
+  window.onload = function(){
+    var textarea = document.querySelector('#tb');
+    var button  = document.querySelector('#sb');
+    button.onclick = function(ev){
+      ev.preventDefault();
+      location.href = '/login';
+    }
+    textarea.onfocus = function(){
+      location.href =  '/login';
+    }
+  }
+</script>
+

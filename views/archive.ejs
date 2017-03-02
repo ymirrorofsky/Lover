@@ -1,0 +1,14 @@
+<% include header %>
+<div class="container marginTop form-group">
+  <ul class="col-xs-offset-1 col-xs-10 post-ul">
+    <% var lastYear = 0 %>
+    <% posts.forEach(function (post,index) { %>
+      <li><% if (lastYear != post.time.year) { %>
+        <h4><%= post.time.minute %>
+        <% lastYear = post.time.minute } %>
+        <time><% post.time.minute %></time>
+        <h3 class="title"><a href="/u/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>"><%= post.title %></a></h3>
+    <% }) %>
+    </li>
+  </ul>
+</div>
